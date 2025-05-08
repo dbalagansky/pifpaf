@@ -69,7 +69,7 @@ class InfluxDBDriver(drivers.Driver):
         c, _ = self._exec(
             ["influxd", "-config", cfgfile],
             wait_for_line=(
-                r"Listening on HTTP: \[::\]:%d" % self.port
+                r"Listening on HTTP.*\[::\]:%d" % self.port
             ),
             path=["/opt/influxdb"])
 
